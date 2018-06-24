@@ -1,5 +1,342 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body,
+html {
+    height: 100vh;
+    background-color: #F8F8F8;
+    overflow-x: hidden;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.app {
+    margin: 0px !important;
+}
+
+.relative {
+    position: relative;
+}
+
+nav .coins {
+    background-color: #484848;
+    position: absolute;
+    top: 51px;
+    right: 15px;
+    z-index: 1;
+    padding: 3px 25px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    color: #fff;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-image: url(components/Images/coin.png);
+    background-size: 10%;
+    background-position: 10px 7px;
+    padding-left: 30px;
+    text-transform: uppercase;
+}
+
+.jumbotron {
+    background-image: url(components/Images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#logo {
+    padding-top: 5px;
+}
+
+.title-section {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+#button-init-adventure {
+    height: 230px;
+    border-radius: 5px;
+    padding: 15px 30px;
+    border: 1px solid;
+    border-color: #eaeaea;
+    text-align: center;
+    background-color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 170px;
+    font-size: 25px;
+}
+
+#button-init-adventure a {
+    background-image: url(components/Images/background-adventure.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 350px;
+    color: #666;
+}
+
+#button-init-adventure a:hover {
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.navbar-inverse {
+    background-color: #333;
+    background-image: none;
+}
+
+input,
+.btn {
+    border-radius: 2px !important;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* CSS ITALO */
+
+.card-form {
+    background-color: #ffff;
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+img#profile-img {
+    /* padding-top: 5%; */
+    padding-bottom: 5%;
+}
+
+.profile-img-card {
+    width: 100%;
+    height: auto;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.card-form-container.card-form {
+    max-width: 50%;
+    padding: 40px 40px;
+}
+
+@media (max-width: 767px) {
+    .card-form-container.card-form {
+        max-width: 100%;
+    }
+}
+
+.form-signin input {
+    direction: ltr;
+    height: 66px;
+    font-size: 16px;
+    border: 3px solid #B7B7B7;
+}
+
+.form-signin input,
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: #B7B7B7;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    background-color: #39D36A;
+    padding: 0px;
+    font-weight: 700;
+    font-size: 18px;
+    height: 66px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.btn.btn-signin:disabled {
+    background-color: rgb(146, 199, 163);
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus {
+    color: rgb(12, 97, 33);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-error {
+    color: #C12426;
+}
+
+.form-signup input {
+    direction: ltr;
+    height: 66px;
+    font-size: 16px;
+    border: 3px solid #B7B7B7;
+}
+
+.form-signup input,
+.form-signup button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signup .form-control:focus {
+    border-color: #B7B7B7;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signup {
+    background-color: #39D36A;
+    padding: 0px;
+    font-weight: 700;
+    font-size: 18px;
+    height: 66px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.btn.btn-signup:hover,
+.btn.btn-signup:active,
+.btn.btn-signup:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.btn.btn-signup:disabled {
+    background-color: rgb(146, 199, 163);
+}
+
+.form-forgotPassword #inputEmail {
+    direction: ltr;
+    height: 66px;
+    font-size: 16px;
+    border: 3px solid #B7B7B7;
+}
+
+.form-forgotPassword input[type=email],
+.form-forgotPassword button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-forgotPassword .form-control:focus {
+    border-color: #B7B7B7;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-forgotPassword {
+    background-color: #39D36A;
+    padding: 0px;
+    font-weight: 700;
+    font-size: 18px;
+    height: 66px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.btn.btn-forgotPassword:hover,
+.btn.btn-forgotPassword:active,
+.btn.btn-forgotPassword:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.btn.btn-forgotPassword:disabled {
+    background-color: rgb(146, 199, 163);
+}
+
+.background-img {
+    background: url(components/Images/background.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
 }
