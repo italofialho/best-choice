@@ -22,7 +22,9 @@ class DashboardPage extends Component {
         const initialState = {
             authUser: {},
             offers: {},
-            totalAdventures: 20
+            offersHTML: [],
+            totalAdventures: 20,
+            userTheme: 'default'
         };
 
         return initialState;
@@ -31,44 +33,59 @@ class DashboardPage extends Component {
   
 
     componentDidMount(){
-      this.getOffers();
       db.refNode(`Users/${auth.getAuthUser().uid}`).on('value', (snapShot) => {
         if (snapShot.val() != null){
-          this.setState({ authUser: snapShot.val() });
+            this.setState({ authUser: snapShot.val(), userTheme: snapShot.val().theme }, () => {
+                this.getOffers();
+            });
         }
     });
     }
 
     getOffers(){
-      db.refNode("Offers").once("value").then(offers => {
+      db.refNode("Offers").on("value", offers => {
         if(offers.val()){
-          this.setState({offers: offers.val()});
-          console.log("getOffers:", offers.val());
+          
+          var offersList = offers.val();
+
+          var offersHTML = _.map(offersList, (offer, offerkey) => {
+            return(
+                <div class="col-md-3" key={offerkey}>
+                    <div class={`box-offer-${this.state.userTheme}`}>
+                        <h2>{offer.title}</h2>
+                        <img src={offerImg} />
+                        <p>{offer.desc}</p>
+                    </div>
+                </div>
+            );
+          });
+          this.setState({offers: offersList, offersHTML});
         }
       })
     }
 
     render() {
+        let offerIndex = 0;
         return(
           <div style={{paddingTop: 50}}>
             <NavBar />
-            
     <div id="hot-offers" class="container">
-        <h1 class="title-section">Principais ofertas</h1>
-        <div class="row">
-            { _.size(this.state.offers) > 0 &&
-              _.map(this.state.offers, offer => {
+    <h1 class={`title-section-${this.state.userTheme}`}>Principais ofertas</h1>
+        <div className="row">
+            { _.size(this.state.offersHTML) > 0 &&
+            _.chunk(this.state.offersHTML, 4).map((group) => { 
                 return(
-                  <div class="col-md-3">
-                <div class="box-offer">
-                    <h2>Estilo</h2>
-                    <img src={offerImg} />
-                    <p>Hud skin de inverno, a nova moda.</p>
-                </div>
-            </div>
+                    <div>
+                        <div className="row">{group}</div>
+                    {
+                        _.last(this.state.offersHTML).key !== _.last(group).key && 
+                        <hr/> 
+                    }
+                    </div>
                 )
               })
-            }
+                
+              }
             
         </div>
         <footer>
@@ -80,14 +97,7 @@ class DashboardPage extends Component {
     }
 }
 
-const DashboardPageLink = () => (
-    <Link className="menu-link" to={routes.DASHBOARD}>
-        <i className="fas fa-tachometer-alt" />
-        <span>Dashboard</span>
-    </Link>
-);
+
 
 const authCondition = (authUser) => !!authUser;
 export default withAuthorization(authCondition)(DashboardPage);
-
-export { DashboardPageLink };
