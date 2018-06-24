@@ -21,7 +21,7 @@ class NavBar extends Component {
             userName: "",
             userCoins: 0,
             userTheme: "default",
-            totalAdventures: 20,
+            totalAdventures: 0,
             profileAvatar: 'homem-2'
         };
 
@@ -29,10 +29,15 @@ class NavBar extends Component {
     }
 
     componentDidMount() {
+        this.getAuthUser();
+        this.countAdventures();
+    }
+
+    getAuthUser() {
         db.refNode(`Users/${auth.getAuthUser().uid}`).on('value', (snapShot) => {
             let user = snapShot.val();
-            if(user.theme === "winter"){
-                Snowy();
+            if (user.theme === "winter") {
+                this.makeItSnow();
             }
             this.setState({
                 authUser: user,
@@ -42,6 +47,19 @@ class NavBar extends Component {
                 profileAvatar: user.profileAvatar
             });
         });
+    }
+
+    makeItSnow(){
+        Snowy();
+    }
+
+    countAdventures() {
+        db.refNode("Adventures/")
+            .on("value", (snapShot) => {
+                this.setState({
+                    totalAdventures: snapShot.numChildren()
+                })
+            });
     }
 
     render() {
@@ -72,7 +90,7 @@ class NavBar extends Component {
                 <div className={`coins-${this.state.userTheme}`}>{this.state.userCoins} coins</div>
             </div>
         </nav>
-        <div className="jumbotron" style={{backgroundImage: "url(" + images(`./background-theme-${this.state.userTheme}.png`) + ")"}}>
+        <div className={`jumbotron-${this.state.userTheme}`} style={{backgroundImage: "url(" + images(`./background-theme-${this.state.userTheme}.png`) + ")"}}>
         <canvas id="canv" className={`canv-theme-${this.state.userTheme}`}></canvas>
         <div className="container">
             <div className="row">
@@ -86,7 +104,7 @@ class NavBar extends Component {
                             <div id={`info-profile-${this.state.userTheme}`} className="col-md-8">
                                 <div id={`name-${this.state.userTheme}`}>{this.state.authUser.username}</div>
                                 <div id={`level-${this.state.userTheme}`}>{this.state.authUser.levelString}</div>
-                                <div id={`info-level-progress-${this.state.userTheme}`}>{this.state.authUser.adventuresDone}/{this.state.totalAdventures} aventuras realizadas</div>
+                                <div id={`info-level-progress-${this.state.userTheme}`}>{this.state.authUser.adventuresDone}/{this.state.totalAdventures} {this.state.totalAdventures > 1 ? "aventuras" : "aventura"} {this.state.totalAdventures > 1 ? "realizadas" : "realizada"}</div>
                                 <div id={`level-progress-${this.state.userTheme}`}>
                                     <div id={`real-progress-level-${this.state.userTheme}`} className="_50" style={{width: `${(this.state.authUser.adventuresDone * 100)/this.state.totalAdventures}%`}}></div>
                                 </div>

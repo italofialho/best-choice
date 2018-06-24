@@ -36,6 +36,10 @@ class ProfilePage extends Component {
   
 
     componentDidMount() {
+        this.getAuthUser();
+    }
+
+    getAuthUser() {
         db.refNode(`Users/${auth.getAuthUser().uid}`).on('value', (snapShot) => {
             if (snapShot.val() != null) {
                 this.getPurchasedThemes();
@@ -43,6 +47,7 @@ class ProfilePage extends Component {
                     authUser: snapShot.val(),
                     newProfile: {
                         username: snapShot.val().username,
+                        theme: snapShot.val().theme,
                         genre: snapShot.val().genre
                     },
                     userTheme: snapShot.val().theme,
@@ -118,7 +123,7 @@ class ProfilePage extends Component {
           <div style={{paddingTop: 50}}>
             <NavBar />
             <ToastContainer />
-            <div id="perfil-info" className="container">
+            <div id={`perfil-info-${this.state.userTheme}`} className="container">
             <h1 className="title-section">Alterar dados pessoais</h1>
             <div className="row">
                 <div className="col-md-6">
@@ -173,8 +178,8 @@ class ProfilePage extends Component {
                                 <label>Tema</label>
                                 <select 
                                     onChange={e => this.handleProfileChange(e.target.value, "theme")}
-                                    className="form-control" v
-                                    alue={this.state.authUser.theme}>
+                                    className="form-control"
+                                    value={this.state.newProfile.theme}>
                                     <option value="default">Padrão</option>
                                     {
                                         _.size(this.state.purshasedItems) > 0 &&

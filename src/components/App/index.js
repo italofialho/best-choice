@@ -13,6 +13,7 @@ import AdventurePage from "../Adventure";
 import StorePage from "../Store";
 import ProfilePage from "../Profile";
 import { LogoutPage } from "../SignOut";
+import AdventureQuestions from "../AdventureQuestions";
 
 const App = () => (
     <HashRouter>
@@ -62,6 +63,11 @@ const App = () => (
                     exact
                     path={routes.PROFILE}
                     component={() => <ProfilePage />}
+                />
+                <Route
+                    exact
+                    path={`${routes.ADVENTURE}/:adventureId`}
+                    component={(props) => <AdventureQuestions {...props}/>}
                 />
                 <Route component={() => <NotFound />} />
             </Switch>

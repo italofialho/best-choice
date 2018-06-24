@@ -56,17 +56,23 @@ body {
     text-transform: uppercase;
 }
 
-.jumbotron {
+.jumbotron-winter {
     background-image: url(components/Images/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-color: #fff;
-    -webkit-transition: background-image 1s ease-out;
-    -moz-transition: background-image 1s ease-out;
-    -o-transition: background-image 1s ease-out;
-    -ms-transition: background-image 1s ease-out;
-    transition: background-image 1s ease-out;
+    padding-top: 100px;
+}
+
+.jumbotron-default {
+    background-image: url(components/Images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
 
 #logo {
@@ -80,7 +86,7 @@ body {
     margin-bottom: 30px;
 }
 
-.title-section-winter{
+.title-section-winter {
     display: none;
 }
 
@@ -114,7 +120,7 @@ body {
     background-image: url(components/Images/placa-inverno.png);
 }
 
-#info-profile-default{
+#info-profile-default {
     background-image: none;
 }
 
@@ -128,7 +134,7 @@ body {
     background-image: none;
 }
 
-.navbar-inverse-winter{
+.navbar-inverse-winter {
     background-color: #fff;
     background-image: none;
     border-color: #60a9c2;
@@ -155,41 +161,45 @@ input,
     width: 100%;
 }
 
-.box-offer-default{
+.box-offer-default {
     background-color: #f5f5f5;
     padding: 10px;
     border-radius: 3px;
     border: 1px solid #eaeaea;
     min-height: 250px;
 }
-.box-offer-default h2{
+
+.box-offer-default h2 {
     font-weight: bold;
     font-size: 20px;
     text-transform: uppercase;
     margin: 0;
 }
 
-.box-offer-default img{
+.box-offer-default img {
     margin: 10px auto;
     display: block;
     height: 100px;
 }
-.box-offer-default p{
+
+.box-offer-default p {
     text-align: center;
     margin-top: 20px;
 }
-.box-offer-default button{
+
+.box-offer-default button {
     width: 100%;
 }
 
-.box-offer-winter{
+.box-offer-winter {
     background-color: #f5f5f5;
     padding: 10px;
     border-radius: 3px;
     border: 1px solid #eaeaea;
     min-height: 250px;
 }
-.box-offer-winter h2{
+
+.box-offer-winter h2 {
     font-weight: bold;
     font-size: 20px;
     text-transform: uppercase;
@@ -197,27 +207,32 @@ input,
     color: #60a9c2;
 }
 
-.box-offer-winter img{
+.box-offer-winter img {
     margin: 10px auto;
     display: block;
     height: 100px;
 }
-.box-offer-winter p{
+
+.box-offer-winter p {
     text-align: center;
     margin-top: 20px;
 }
-.box-offer-winter button{
+
+.box-offer-winter button {
     width: 100%;
     background-image: none;
     background-color: #77cef4;
     border-color: #60a9c2;
 }
 
-.hr-default{
-
+.box-offer-winter button:hover {
+    border-color: #77cef4;
+    background-color: #60a9c2;
 }
 
-.hr-winter{
+.hr-default {}
+
+.hr-winter {
     height: 80px;
     background-image: url(components/Images/division-winter.png);
     background-repeat: no-repeat;
@@ -226,9 +241,7 @@ input,
     border: none;
 }
 
-
-
-#profile-default{
+#profile-default {
     background-color: #fff;
     border-radius: 5px;
     padding: 15px 30px;
@@ -236,18 +249,18 @@ input,
     border-color: #eaeaea;
 }
 
-#profile-winter{
+#profile-winter {
     background-color: transparent;
     border-color: transparent;
 }
 
-.col-md-6 #profile-winter #info-profile-winter{
+.col-md-6 #profile-winter #info-profile-winter {
     background-repeat: no-repeat;
     background-size: 80% 100%;
     background-position: 34px center;
 }
 
-#image{
+#image {
     background-image: url(components/Images/homem-1.png);
     background-position: center;
     background-size: contain;
@@ -255,24 +268,27 @@ input,
     width: 69px;
     height: 198px;
 }
-#name-default{
+
+#name-default {
     text-align: right;
-    font-weight: 600; 
+    font-weight: 600;
 }
-#level-default{
+
+#level-default {
     text-align: right;
     font-size: 15px;
     font-weight: 100;
     text-transform: capitalize;
 }
 
-#name-winter{
+#name-winter {
     margin-top: 4px;
     color: #fff;
     font-weight: bold;
     text-align: right;
 }
-#level-winter{
+
+#level-winter {
     margin-top: 4px;
     color: #fff;
     font-weight: bold;
@@ -281,39 +297,39 @@ input,
     text-transform: capitalize;
 }
 
-.col-md-6 #profile-winter #info-profile-winter #name-winter, 
-.col-md-6 #profile-winter #info-profile-winter #level-winter, 
-.col-md-6 #profile-winter #info-profile-winter #info-level-progress-winter, 
-.col-md-6 #profile-winter #info-profile-winter #level-progress-winter{
+.col-md-6 #profile-winter #info-profile-winter #name-winter,
+.col-md-6 #profile-winter #info-profile-winter #level-winter,
+.col-md-6 #profile-winter #info-profile-winter #info-level-progress-winter,
+.col-md-6 #profile-winter #info-profile-winter #level-progress-winter {
     width: 80%;
 }
 
-.col-md-6 #profile-winter #info-profile-winter #level-progress-winter{
+.col-md-6 #profile-winter #info-profile-winter #level-progress-winter {
     width: 65%;
 }
 
-#info-level-progress-default{
+#info-level-progress-default {
     margin-top: 15px;
     text-align: right;
     font-size: 13px;
 }
 
-#info-level-progress-winter{
+#info-level-progress-winter {
     margin-top: 5px;
     color: #fff;
     text-align: right;
     font-size: 13px;
 }
 
-#level-progress-default{
+#level-progress-default {
     width: 100%;
     height: 10px;
     background-color: #77cef4;
     border-radius: 5px;
-    margin-bottom: 30px;    
+    margin-bottom: 30px;
 }
 
-#level-progress-winter{
+#level-progress-winter {
     margin-left: 15%;
     margin-top: 7px;
     height: 10px;
@@ -322,21 +338,21 @@ input,
     margin-bottom: 30px;
 }
 
-#real-progress-level-default{
+#real-progress-level-default {
     background-color: #60a9c2;
     width: 70%;
     height: 100%;
     border-radius: 5px;
 }
 
-#real-progress-level-winter{
+#real-progress-level-winter {
     background-color: #60a9c2;
     width: 70%;
     height: 100%;
     border-radius: 5px;
 }
 
-.medal{
+.medal {
     width: 48px;
     height: 70px;
     background-repeat: no-repeat;
@@ -344,19 +360,24 @@ input,
     background-position: bottom;
     position: relative;
 }
-.medal._1{
+
+.medal._1 {
     background-image: url(components/Images/medalha-2.png);
 }
-.medal._2{
+
+.medal._2 {
     background-image: url(components/Images/medalha-1.png);
 }
-.medal._3{
+
+.medal._3 {
     background-image: url(components/Images/medalha-3.png);
 }
-.medal._4{
+
+.medal._4 {
     background-image: url(components/Images/medalha-4.png);
 }
-.medal._5{
+
+.medal._5 {
     background-image: url(components/Images/medalha-5.png);
 }
 
@@ -394,11 +415,11 @@ input,
     z-index: 999;
 }
 
-.canv-theme-default{
+.canv-theme-default {
     display: none;
 }
 
-.canv-theme-winter{
+.canv-theme-winter {
     display: block;
 }
 
@@ -412,10 +433,565 @@ input,
     background-size: auto 65%;
     background-position: left;
 }
+
 .box-coins-adventure {
     padding-bottom: 5%;
     text-align: center;
     font-weight: bold;
+}
+
+#box-adventures-default .adventure {
+    min-height: 400px;
+    border-radius: 4px;
+    border: 1px solid #999;
+    position: relative;
+}
+
+#box-adventures-default .adventure .title-adventure {
+    background-color: #eaeaea;
+    color: #333;
+    font-weight: bold;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    text-transform: uppercase;
+    font-size: 17px;
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    padding: 15px;
+}
+
+#box-adventures-default .adventure .img-adventure {
+    width: 100%;
+    height: 135px;
+    background-image: url(components/Images/background-adventure-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#box-adventures-default .adventure .icon-adventure {
+    width: 80px;
+    height: 80px;
+    background-image: url(components/Images/icon-adventure-1.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+    position: absolute;
+    top: 175px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 100px;
+    border: 2px solid #dedede;
+}
+
+#box-adventures-default .adventure .box-coins-adventure {
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#box-adventures-default .adventure .box-button {
+    width: 100%;
+    padding: 15px;
+}
+
+#box-adventures-default .adventure .box-coins-adventure .total-coins {
+    font-size: 16px;
+    margin-bottom: 0;
+    display: inline-block;
+    padding-left: 18px;
+    background-image: url(components/Images/coin.png);
+    background-repeat: no-repeat;
+    background-size: auto 65%;
+    background-position: left;
+}
+
+#box-adventures-default .adventure .box-coins-adventure .parcial-coins {
+    font-weight: 100;
+    font-size: 11px;
+}
+
+#perfil-info-default button,
+#box-adventures-default .adventure .box-button a {
+    background-image: none;
+}
+
+#perfil-info-winter button,
+#box-adventures-winter .adventure .box-button a {
+    background-image: none;
+    background-color: #60a9c2;
+    border-color: #3d8ca7;
+}
+
+#perfil-info-winter button:hover,
+#box-adventures-winter .adventure .box-button a:hover {
+    background-color: #3d8ca7;
+}
+
+#box-adventures-default{
+    padding-top: 50px;
+}
+
+
+#box-adventures-winter{
+    padding-top: 50px;
+}
+
+#box-adventures-default .adventure .box-button a {
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    line-height: 28px;
+    width: 100%;
+    background-color: #0a9f0a;
+    text-align: center;
+    border: 1px solid #067c06;
+    border-bottom: 2px solid #067c06;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 30px;
+    margin-top: 20px;
+}
+
+#box-adventures-default .adventure .box-button .bar-level-adventure {
+    margin: 0 auto;
+    width: 90%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #868686;
+    margin-top: 5px;
+}
+
+#box-adventures-default .adventure .box-button .bar-level-adventure .bar-level-adventure-real {
+    border-radius: 10px;
+    width: 70%;
+    height: 100%;
+    background-color: #5f5f5f;
+}
+
+#box-adventures-default .adventure .box-button p {
+    width: 100%;
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#box-adventures-winter .adventure {
+    min-height: 400px;
+    border-radius: 4px;
+    border: 1px solid #999;
+    position: relative;
+}
+
+#box-adventures-winter .adventure .title-adventure {
+    background-color: #eaeaea;
+    color: #333;
+    font-weight: bold;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    text-transform: uppercase;
+    font-size: 17px;
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    padding: 15px;
+}
+
+#box-adventures-winter .adventure .img-adventure {
+    width: 100%;
+    height: 135px;
+    background-image: url(components/Images/background-adventure-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#box-adventures-winter .adventure .icon-adventure {
+    width: 80px;
+    height: 80px;
+    background-image: url(components/Images/icon-adventure-1.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+    position: absolute;
+    top: 175px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 100px;
+    border: 2px solid #dedede;
+}
+
+#box-adventures-winter .adventure .box-coins-adventure {
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#box-adventures-winter .adventure .box-button {
+    width: 100%;
+    padding: 15px;
+}
+
+#box-adventures-winter .adventure .box-coins-adventure .total-coins {
+    font-size: 16px;
+    margin-bottom: 0;
+    display: inline-block;
+    padding-left: 18px;
+    background-image: url(components/Images/coin.png);
+    background-repeat: no-repeat;
+    background-size: auto 65%;
+    background-position: left;
+}
+
+#box-adventures-winter .adventure .box-coins-adventure .parcial-coins {
+    font-weight: 100;
+    font-size: 11px;
+}
+
+#perfil-info-winter button,
+#box-adventures-winter .adventure .box-button a {
+    background-image: none;
+}
+
+#perfil-info-winter button,
+#box-adventures-winter .adventure .box-button a {
+    background-image: none;
+    background-color: #60a9c2;
+    border-color: #3d8ca7;
+}
+
+#perfil-info-winter button:hover,
+#box-adventures-winter .adventure .box-button a:hover {
+    background-color: #3d8ca7;
+}
+
+#box-adventures-winter .adventure .box-button a {
+    background-image: none;
+    background-color: #60a9c2;
+    border-color: #3d8ca7;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    line-height: 28px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 30px;
+    margin-top: 20px;
+}
+
+#box-adventures-winter .adventure .box-button .bar-level-adventure {
+    margin: 0 auto;
+    width: 90%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #868686;
+    margin-top: 5px;
+}
+
+#box-adventures-winter .adventure .box-button .bar-level-adventure .bar-level-adventure-real {
+    border-radius: 10px;
+    width: 70%;
+    height: 100%;
+    background-color: #5f5f5f;
+}
+
+#box-adventures-winter .adventure .box-button p {
+    width: 100%;
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-signin {
+    
+}
+
+.answer-form {
+    width: 100%;
+    max-width: 650px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 2px;
+    height: 80%;
+    position: absolute;
+    display: inline-table;
+    left: 0;
+    right: 0;
+    margin-top: 5%;
+}
+
+.header-question-winter {
+    background-color: #60a9c2;
+    width: 100%;
+    height: 55px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-bottom: 2px solid #e4e4e4;
+}
+
+.header-question-default {
+    background-color: #87d388;
+    width: 100%;
+    height: 55px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-bottom: 2px solid #e4e4e4;
+}
+
+#background-image-home {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(components/Images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.7;
+    background-size: cover;
+}
+
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-signin button[type="submit"] {
+    background-color: #9843c3;
+    color: #fff;
+}
+
+.link-esqueci-senha {
+    text-align: right;
+    width: 100%;
+    display: block;
+    color: #9843c3;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.question {
+    position: relative;
+    height: 185px;
+    margin-top: 65px;
+}
+
+.bodyClass {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.box-question {
+    width: 85%;
+    height: 150px;
+    background-color: #dadada26;
+    border: 1px solid #d6d6d6;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.box-question-1 {
+    transform: rotate(1deg);
+    background-color: #dadada38;
+}
+
+.box-question-2 {
+    transform: rotate(359deg);
+    background-color: #dadada3d;
+}
+
+.box-question-3 {
+    transform: rotate(1.5deg);
+    background-color: #dadadad1;
+}
+
+.box-question-4 {
+    transform: rotate(359.5deg);
+    background-color: #dadada6e;
+}
+
+.box-question-5 {
+    padding: 0 20px;
+    text-align: center;
+    display: table;
+}
+
+.box-question-5 div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.header-question {
+    background-color: #87d388;
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-bottom: 2px solid #e4e4e4;
+}
+
+.title-category-question {
+    color: #fff;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 50px;
+}
+
+.box-answer-question {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+
+.answer-question {
+    width: 100%;
+    margin-bottom: 10px;
+    min-height: 50px;
+    display: none;
+}
+
+.answer-question div {
+    background-color: #eaeaea;
+    padding: 10px 0;
+    border-radius: 2px;
+    border-top: 1px solid #d6d6d6;
+    border-left: 2px solid #d6d6d6;
+    border-right: 2px solid #d6d6d6;
+    border-bottom: 2px solid #d6d6d6;
+    cursor: pointer;
+}
+
+.answer-question div:hover {
+    border-top: 2px solid #d6d6d6;
+    border-left: 3px solid #d6d6d6;
+    border-right: 3px solid #d6d6d6;
+    border-bottom: 4px solid #d6d6d6;
+}
+
+.answer-question.disabled div {
+    background-color: #b9b9b9;
+    color: #fff;
+    border-top: 2px solid #676768;
+    border-left: 3px solid #676768;
+    border-right: 3px solid #676768;
+    border-bottom: 4px solid #676768;
+    cursor: not-allowed;
+}
+
+.answer-question.correct div {
+    background-color: #068606;
+    color: #fff;
+    border-top: 2px solid #136913;
+    border-left: 3px solid #136913;
+    border-right: 3px solid #136913;
+    border-bottom: 4px solid #136913;
+}
+
+.answer-question.incorrect div {
+    background-color: #ad0000;
+    color: #fff;
+    border-top: 2px solid #d6d6d6;
+    border-left: 3px solid #d6d6d6;
+    border-right: 3px solid #d6d6d6;
+    border-bottom: 4px solid #d6d6d6;
+    border-color: #860202;
+}
+
+.footer-question {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 75px;
+    white-space: nowrap;
+}
+
+.footer-question a:nth-child(1) {
+    border: none;
+}
+
+.footer-question a,
+.footer-question div {
+    width: 25%;
+    display: inline-block;
+    background-color: #676768;
+    height: 100%;
+    float: left;
+    border-left: 2px solid #8e8e8e;
+    cursor: pointer;
+}
+
+.footer-question a:hover,
+.footer-question div:hover {
+    opacity: 0.9;
+}
+
+.footer-question a i,
+.footer-question div i {
+    color: #fff;
+    font-size: 30px;
+    line-height: 75px;
+}
+
+.box-type-answer {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    line-height: 120px;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.box-type-answer.correto {
+    color: green;
+}
+
+.box-type-answer.incorreto {
+    color: red;
 }
 
 /* CSS ITALO */

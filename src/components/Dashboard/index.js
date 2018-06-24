@@ -23,7 +23,6 @@ class DashboardPage extends Component {
             authUser: {},
             offers: {},
             offersHTML: [],
-            totalAdventures: 20,
             userTheme: 'default'
         };
 
@@ -33,13 +32,21 @@ class DashboardPage extends Component {
   
 
     componentDidMount(){
-      db.refNode(`Users/${auth.getAuthUser().uid}`).on('value', (snapShot) => {
-        if (snapShot.val() != null){
-            this.setState({ authUser: snapShot.val(), userTheme: snapShot.val().theme }, () => {
-                this.getOffers();
+      this.getAuthUser();
+    }
+
+    getAuthUser() {
+        db.refNode(`Users/${auth.getAuthUser().uid}`)
+            .on('value', (snapShot) => {
+                if (snapShot.val() != null) {
+                    this.setState({
+                        authUser: snapShot.val(),
+                        userTheme: snapShot.val().theme
+                    }, () => {
+                        this.getOffers();
+                    });
+                }
             });
-        }
-    });
     }
 
     getOffers(){
