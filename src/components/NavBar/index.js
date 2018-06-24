@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import * as routes from "../../constants/routes";
 import logoImg from "../Images/logo.png";
+import { Snowy } from "../Common/Functions";
 
 const images = require.context('../Images', true);
 
@@ -20,7 +21,8 @@ class NavBar extends Component {
             userName: "",
             userCoins: 0,
             userTheme: "default",
-            totalAdventures: 20
+            totalAdventures: 20,
+            profileAvatar: 'homem-2'
         };
 
         return initialState;
@@ -29,11 +31,15 @@ class NavBar extends Component {
     componentDidMount() {
         db.refNode(`Users/${auth.getAuthUser().uid}`).on('value', (snapShot) => {
             let user = snapShot.val();
+            if(user.theme === "winter"){
+                Snowy();
+            }
             this.setState({
                 authUser: user,
                 userName: user.username,
                 userCoins: user.coins,
-                userTheme: user.theme
+                userTheme: user.theme,
+                profileAvatar: user.profileAvatar
             });
         });
     }
@@ -67,6 +73,7 @@ class NavBar extends Component {
             </div>
         </nav>
         <div className="jumbotron" style={{backgroundImage: "url(" + images(`./background-theme-${this.state.userTheme}.png`) + ")"}}>
+        <canvas id="canv" className={`canv-theme-${this.state.userTheme}`}></canvas>
         <div className="container">
             <div className="row">
                 <div className="col-md-6">
@@ -74,7 +81,7 @@ class NavBar extends Component {
                         <div id="complement-theme"></div>
                         <div className="row">
                             <div className="col-md-4">
-                                <div id="image"></div>
+                                <div id="image" style={{backgroundImage: `url(${images(`./${this.state.profileAvatar}.png`)})`}}></div>
                             </div>
                             <div id={`info-profile-${this.state.userTheme}`} className="col-md-8">
                                 <div id={`name-${this.state.userTheme}`}>{this.state.authUser.username}</div>

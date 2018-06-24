@@ -11,7 +11,9 @@ export const doCreateUser = (id, username, email) => {
         level: 0,
         levelString: 'unranked',
         adventuresDone: 0,
-        theme: 'default'
+        theme: 'default',
+        profileAvatar: 'homem-1',
+        genre: "MAN"
     });
 };
 

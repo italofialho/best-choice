@@ -11,6 +11,7 @@ import DashboardPage from "../Dashboard";
 import NotFound from "../NotFound";
 import AdventurePage from "../Adventure";
 import StorePage from "../Store";
+import ProfilePage from "../Profile";
 import { LogoutPage } from "../SignOut";
 
 const App = () => (
@@ -56,6 +57,11 @@ const App = () => (
                     exact
                     path={routes.STORE}
                     component={() => <StorePage />}
+                />
+                 <Route
+                    exact
+                    path={routes.PROFILE}
+                    component={() => <ProfilePage />}
                 />
                 <Route component={() => <NotFound />} />
             </Switch>
