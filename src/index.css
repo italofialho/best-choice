@@ -3,7 +3,6 @@
 body,
 html {
     height: 100vh;
-    background-color: #F8F8F8;
     overflow-x: hidden;
 }
 
@@ -19,8 +18,27 @@ body {
     position: relative;
 }
 
-nav .coins {
+.coins-default {
     background-color: #484848;
+    position: absolute;
+    top: 51px;
+    right: 15px;
+    z-index: 1;
+    padding: 3px 25px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    color: #fff;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-image: url(components/Images/coin.png);
+    background-size: 10%;
+    background-position: 10px 7px;
+    padding-left: 30px;
+    text-transform: uppercase;
+}
+
+.coins-winter {
+    background-color: #60a9c2;
     position: absolute;
     top: 51px;
     right: 15px;
@@ -43,6 +61,7 @@ nav .coins {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: #fff;
 }
 
 #logo {
@@ -82,14 +101,28 @@ nav .coins {
     color: #666;
 }
 
+#info-profile-winter {
+    background-image: url(components/Images/placa-inverno.png);
+}
+
+#info-profile-default{
+    background-image: none;
+}
+
 #button-init-adventure a:hover {
     text-decoration: none;
     opacity: 0.85;
 }
 
-.navbar-inverse {
+.navbar-inverse-default {
     background-color: #333;
     background-image: none;
+}
+
+.navbar-inverse-winter{
+    background-color: #fff;
+    background-image: none;
+    border-color: #60a9c2;
 }
 
 input,
@@ -131,13 +164,25 @@ input,
     width: 100%;
 }
 
-#profile{
+#profile-default{
     background-color: #fff;
     border-radius: 5px;
     padding: 15px 30px;
     border: 1px solid;
     border-color: #eaeaea;
 }
+
+#profile-winter{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.col-md-6 #profile-winter #info-profile-winter{
+    background-repeat: no-repeat;
+    background-size: 80% 100%;
+    background-position: 34px center;
+}
+
 #image{
     background-image: url(components/Images/homem-1.png);
     background-position: center;
@@ -146,34 +191,86 @@ input,
     width: 69px;
     height: 198px;
 }
-#name{
+#name-default{
     text-align: right;
     font-weight: 600; 
 }
-#level{
+#level-default{
     text-align: right;
     font-size: 15px;
     font-weight: 100;
     text-transform: capitalize;
 }
-#info-level-progress{
+
+#name-winter{
+    margin-top: 4px;
+    color: #fff;
+    font-weight: bold;
+    text-align: right;
+}
+#level-winter{
+    margin-top: 4px;
+    color: #fff;
+    font-weight: bold;
+    text-align: right;
+    font-size: 15px;
+}
+
+.col-md-6 #profile-winter #info-profile-winter #name-winter, 
+.col-md-6 #profile-winter #info-profile-winter #level-winter, 
+.col-md-6 #profile-winter #info-profile-winter #info-level-progress-winter, 
+.col-md-6 #profile-winter #info-profile-winter #level-progress-winter{
+    width: 80%;
+}
+
+.col-md-6 #profile-winter #info-profile-winter #level-progress-winter{
+    width: 65%;
+}
+
+#info-level-progress-default{
     margin-top: 15px;
     text-align: right;
     font-size: 13px;
 }
-#level-progress{
+
+#info-level-progress-winter{
+    margin-top: 5px;
+    color: #fff;
+    text-align: right;
+    font-size: 13px;
+}
+
+#level-progress-default{
     width: 100%;
     height: 10px;
     background-color: #77cef4;
     border-radius: 5px;
     margin-bottom: 30px;    
 }
-#real-progress-level{
+
+#level-progress-winter{
+    margin-left: 15%;
+    margin-top: 7px;
+    height: 10px;
+    background-color: #77cef4;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+#real-progress-level-default{
     background-color: #60a9c2;
     width: 70%;
     height: 100%;
     border-radius: 5px;
 }
+
+#real-progress-level-winter{
+    background-color: #60a9c2;
+    width: 70%;
+    height: 100%;
+    border-radius: 5px;
+}
+
 .medal{
     width: 48px;
     height: 70px;

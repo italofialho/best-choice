@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import * as routes from "../../constants/routes";
 import logoImg from "../Images/logo.png";
 
+const images = require.context('../Images', true);
+
 class NavBar extends Component {
     constructor(props) {
         super(props);
@@ -17,6 +19,7 @@ class NavBar extends Component {
             authUser: {},
             userName: "",
             userCoins: 0,
+            userTheme: "default",
             totalAdventures: 20
         };
 
@@ -26,7 +29,12 @@ class NavBar extends Component {
     componentDidMount() {
         db.refNode(`Users/${auth.getAuthUser().uid}`).on('value', (snapShot) => {
             let user = snapShot.val();
-            this.setState({ authUser: user, userName: user.username, userCoins: user.coins });
+            this.setState({
+                authUser: user,
+                userName: user.username,
+                userCoins: user.coins,
+                userTheme: user.theme
+            });
         });
     }
 
@@ -35,7 +43,7 @@ class NavBar extends Component {
 
         return (
             <div>
-            <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <nav className={`navbar navbar-inverse-${this.state.userTheme} navbar-fixed-top`} role="navigation">
             <div className="container relative">
                 <div className="navbar-header">
                     <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -55,41 +63,41 @@ class NavBar extends Component {
                         <li><Link to={routes.LOGOUT} >Sair</Link></li>
                     </ul>
                 </div>
-                <div className="coins">{this.state.userCoins} coins</div>
+                <div className={`coins-${this.state.userTheme}`}>{this.state.userCoins} coins</div>
             </div>
         </nav>
-        <div class="jumbotron">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="profile">
+        <div className="jumbotron" style={{backgroundImage: "url(" + images(`./background-theme-${this.state.userTheme}.png`) + ")"}}>
+        <div className="container">
+            <div className="row">
+                <div className="col-md-6">
+                    <div id={`profile-${this.state.userTheme}`}>
                         <div id="complement-theme"></div>
-                        <div class="row">
-                            <div class="col-md-4">
+                        <div className="row">
+                            <div className="col-md-4">
                                 <div id="image"></div>
                             </div>
-                            <div id="info-profile" class="col-md-8">
-                                <div id="name">{this.state.authUser.username}</div>
-                                <div id="level">{this.state.authUser.levelString}</div>
-                                <div id="info-level-progress">{this.state.authUser.adventuresDone}/{this.state.totalAdventures} aventuras realizadas</div>
-                                <div id="level-progress">
-                                    <div id="real-progress-level" class="_50" style={{width: `${(this.state.authUser.adventuresDone * 100)/this.state.totalAdventures}%`}}></div>
+                            <div id={`info-profile-${this.state.userTheme}`} className="col-md-8">
+                                <div id={`name-${this.state.userTheme}`}>{this.state.authUser.username}</div>
+                                <div id={`level-${this.state.userTheme}`}>{this.state.authUser.levelString}</div>
+                                <div id={`info-level-progress-${this.state.userTheme}`}>{this.state.authUser.adventuresDone}/{this.state.totalAdventures} aventuras realizadas</div>
+                                <div id={`level-progress-${this.state.userTheme}`}>
+                                    <div id={`real-progress-level-${this.state.userTheme}`} className="_50" style={{width: `${(this.state.authUser.adventuresDone * 100)/this.state.totalAdventures}%`}}></div>
                                 </div>
-                                <div id="row-medals" class="row">
-                                    <div class="col-md-12">
-                                        <div class="col-md-2 medal _1"></div>
-                                        <div class="col-md-2 medal _2"></div>
-                                        <div class="col-md-2 medal _3"></div>
-                                        <div class="col-md-2 medal _1"></div>
-                                        <div class="col-md-2 medal _4"></div>
-                                        <div class="col-md-2 medal _5"></div>
+                                <div id="row-medals" className="row">
+                                    <div className="col-md-12">
+                                        <div className="col-md-2 medal _1"></div>
+                                        <div className="col-md-2 medal _2"></div>
+                                        <div className="col-md-2 medal _3"></div>
+                                        <div className="col-md-2 medal _1"></div>
+                                        <div className="col-md-2 medal _4"></div>
+                                        <div className="col-md-2 medal _5"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div className="col-md-6">
                     <div id="button-init-adventure">
                         <Link to={routes.ADVENTURE} >Começar uma aventura</Link>
                     </div>
