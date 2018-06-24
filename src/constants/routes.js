@@ -4,3 +4,6 @@ export const SIGN_IN = "/signin";
 export const PASSWORD_FORGET = "/passwordForget";
 export const DASHBOARD = "/dashboard";
 export const LOGOUT = "/logout";
+export const ADVENTURE = "/adventure";
+export const STORE = "/store";
+export const PROFILE = "/profile";

@@ -7,7 +7,11 @@ export const doCreateUser = (id, username, email) => {
         email: email,
         uid: id,
         createdDateEpoch: nowEpoch.getTime(),
-        coins: 0
+        coins: 0,
+        level: 0,
+        levelString: 'unranked',
+        adventuresDone: 0,
+        theme: 'default'
     });
 };
 

@@ -12,7 +12,7 @@ import { auth, db } from "../../firebase";
 
 import offerImg from '../Images/offer.png'
 
-class DashboardPage extends Component {
+class StorePage extends Component {
     constructor(props) {
         super(props);
         this.state = this.getInitialState();
@@ -52,7 +52,6 @@ class DashboardPage extends Component {
         return(
           <div style={{paddingTop: 50}}>
             <NavBar />
-            
     <div id="hot-offers" class="container">
         <h1 class="title-section">Principais ofertas</h1>
         <div class="row">
@@ -64,6 +63,7 @@ class DashboardPage extends Component {
                     <h2>Estilo</h2>
                     <img src={offerImg} />
                     <p>Hud skin de inverno, a nova moda.</p>
+                    <button class="btn btn-primary">Comprar</button>
                 </div>
             </div>
                 )
@@ -80,14 +80,7 @@ class DashboardPage extends Component {
     }
 }
 
-const DashboardPageLink = () => (
-    <Link className="menu-link" to={routes.DASHBOARD}>
-        <i className="fas fa-tachometer-alt" />
-        <span>Dashboard</span>
-    </Link>
-);
+
 
 const authCondition = (authUser) => !!authUser;
-export default withAuthorization(authCondition)(DashboardPage);
-
-export { DashboardPageLink };
+export default withAuthorization(authCondition)(StorePage);

@@ -9,6 +9,8 @@ import SignInPage from "../SignIn";
 import PasswordForgetPage from "../PasswordForget";
 import DashboardPage from "../Dashboard";
 import NotFound from "../NotFound";
+import AdventurePage from "../Adventure";
+import StorePage from "../Store";
 import { LogoutPage } from "../SignOut";
 
 const App = () => (
@@ -44,6 +46,16 @@ const App = () => (
                     exact
                     path={routes.DASHBOARD}
                     component={() => <DashboardPage />}
+                />
+                <Route
+                    exact
+                    path={routes.ADVENTURE}
+                    component={() => <AdventurePage />}
+                />
+                <Route
+                    exact
+                    path={routes.STORE}
+                    component={() => <StorePage />}
                 />
                 <Route component={() => <NotFound />} />
             </Switch>
