@@ -24,3 +24,5 @@ export const getAllUsers = () =>
     db.ref('Users');
 
 export const refNode = (nodeRef) => db.ref(nodeRef);
+
+export const refDB = () => db.ref();
